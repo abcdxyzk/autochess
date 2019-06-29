@@ -899,6 +899,8 @@ function DAC:InitGameMode()
 			[1] = {x=4,y=7,enemy='pve_roshan'},
 			[2] = {x=3,y=7,enemy='pve_roshan'},
 			[3] = {x=5,y=7,enemy='pve_roshan'},
+			[4] = {x=2,y=7,enemy='pve_stone_b'},
+			[5] = {x=6,y=7,enemy='pve_stone_b'},
 		},
 		-- [55] = {  --for test
 		-- 	[1] = {x=4,y=5,enemy='chess_dr'},
@@ -2184,7 +2186,7 @@ function InitHeros()
 	end
 	--从服务器获取玩家信息
 	prt('PLAYER_COUNT:'..PlayerResource:GetPlayerCount())
-	prt('v0008')
+	prt('v0009')
 	-- prt(GameRules:GetGameModeEntity().steamidlist_heroindex)
 	local url = "https://autochess.ppbizon.com/game/new/@"..GameRules:GetGameModeEntity().steamidlist_heroindex.."?hehe="..RandomInt(1,10000)..GetSendKey()
 	SendHTTP(url.."&from=InitHeros", function(t)
