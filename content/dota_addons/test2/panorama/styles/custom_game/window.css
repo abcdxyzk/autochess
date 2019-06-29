@@ -1,0 +1,208 @@
+#panel_award{
+	width:700px;
+	height:450px;
+	margin-left:610px;
+	margin-top:315px;
+	transition-property: opacity,position;
+    transition-duration: 0.5s;
+    position: 0px -1000px 0px;
+    opacity:0;
+    z-index:30000;
+    box-shadow: fill #00000066 -4px -4px 8px 8px;
+}
+#panel_award_title{
+	width:700px;
+	height:80px;
+	background-color: #666;
+	margin-top:120px;
+	z-index:300;
+}
+#panel_award_bgimg{
+	width:700px;
+	height:450px;
+	z-index:200;
+}
+#panel_award_bgimg_zhezhao{
+	width:700px;
+	height:450px;
+	z-index:250;
+	background-color: rgba(0,0,0,0.8);
+}
+#panel_award_img{
+	width:180px;
+	height:250px;
+	z-index:500;
+	margin-top:60px;
+	margin-left:50px;
+	background-color: #333;
+	border-radius:20px;
+	box-shadow: #000000ff 0px 0px 10px 1px;
+}
+#panel_award_img_small{
+	width:150px;
+	height:150px;
+	z-index:700;
+	margin-top:85px;
+	margin-left:63px;
+}
+#panel_award_img_hero{
+	width:180px;
+	height:250px;
+	z-index:500;
+	margin-top:60px;
+	margin-left:50px;
+	background-color: #333;
+	border-radius:20px;
+	box-shadow: #000000ff 0px 0px 10px 1px;
+}
+#panel_award_title_count{
+	font-size:36px;
+	color:#ffffff;
+	font-family:Radiance,FZLanTingHei-R-GBK,TH Sarabun New,YDYGO 540,Gulim,MingLiU;
+	margin-top:137px;
+	z-index:600;
+	margin-left:240px;
+	text-align:left;
+	width:200px;
+}
+#panel_award_title_text{
+	font-size:40px;
+	color:#ffffff;
+	font-family:Radiance,FZLanTingHei-R-GBK,TH Sarabun New,YDYGO 540,Gulim,MingLiU;
+	margin-top:134px;
+	z-index:600;
+	margin-left:350px;
+	text-align:right;
+	width:300px;
+}
+#panel_award_title_subtitle{
+	font-size:28px;
+	color:#ffffff;
+	font-family:Radiance,FZLanTingHei-R-GBK,TH Sarabun New,YDYGO 540,Gulim,MingLiU;
+	margin-top:70px;
+	z-index:600;
+	margin-left:200px;
+	text-align:right;
+	width:450px;
+}
+#panel_award_title_desc{
+	font-size:28px;
+	color:#888;
+	font-family:Radiance,FZLanTingHei-R-GBK,TH Sarabun New,YDYGO 540,Gulim,MingLiU;
+	margin-top:220px;
+	z-index:600;
+	margin-left:200px;
+	text-align:right;
+	width:450px;
+}
+#panel_award_ok{
+	width:150px;
+	height:60px;
+	background-color:#333;
+	margin-top:340px;
+	margin-left:500px;
+	z-index:500;
+}
+#panel_award_ok:hover{
+	background-color:#666;
+}
+#panel_award_ok_text{
+	font-size:28px;
+	color:#ffffff;
+	font-family:Radiance,FZLanTingHei-R-GBK,TH Sarabun New,YDYGO 540,Gulim,MingLiU;
+	horizontal-align:center;
+	margin-top:13px;
+}
+
+#msg_box{
+	width:400px;
+	height:100px;
+	background-color: rgba(32,32,32,0.97);
+	horizontal-align:center;
+	vertical-align: center;
+	
+	transition-property:transform;
+	transition-duration:0.3s;
+	z-index:40000;
+	background-image: url("s2r://panorama/images/backgrounds/gallery_background_png.vtex");
+	background-size: 100% 100%;
+	box-shadow: fill #00000066 -4px -4px 8px 8px;
+}
+#msg_box_text{
+	width:400px;
+	height:100px;
+	font-family: Radiance,FZLanTingHei-R-GBK,TH Sarabun New,YDYGO 540,Gulim,MingLiU;
+	font-size:30px;
+	color:#ffffff;
+	line-height:70px;
+	text-align:center;
+}
+
+#confirm_box{
+	width:350px;
+	height:160px;
+	margin-left:785px;
+	margin-top:460px;
+    transition-duration:0.5s;
+    z-index:400;
+    flow-children:down;
+    background-image: url("s2r://panorama/images/backgrounds/gallery_background_png.vtex");
+	background-size: 100% 100%;
+	box-shadow: fill #00000066 -4px -4px 8px 8px;
+}
+.confirmtext{
+	height:75px;	
+	width:350px;
+	padding:10px;
+}
+.confirmtext Label{
+	width:350px;
+	height:75px;
+	font-family: Radiance,FZLanTingHei-R-GBK,TH Sarabun New,YDYGO 540,Gulim,MingLiU;
+	line-height:50px;
+	color:#ffffff;
+	text-align:center;
+	font-size:20px;
+}
+.confirmbtn{
+	height:85px;
+	line-height:60px;
+	width:350px;
+	flow-children:right;
+	padding:10px;
+	padding-top:0px;
+}
+.confirmres{
+	height:60px;
+	width:60px;
+	font-family: Radiance,FZLanTingHei-R-GBK,TH Sarabun New,YDYGO 540,Gulim,MingLiU;
+	text-align:center;
+	margin-left:85px;
+	color:#ffffff;
+	font-size:24px;
+	background-image: url("s2r://panorama/images/custom_game/tick_png.vtex");
+	background-size: 50% 50%;
+	background-position: center center;
+	background-repeat: no-repeat;
+	border-radius: 10px;
+}
+.confirmres:hover{
+	background-color: #444;
+}
+.confirmrej{
+	height:60px;
+	width:60px;
+	font-family: Radiance,FZLanTingHei-R-GBK,TH Sarabun New,YDYGO 540,Gulim,MingLiU;
+	text-align:center;
+	margin-left:50px;
+	color:#ffffff;
+	font-size:32px;
+	background-image: url("s2r://panorama/images/custom_game/cross_png.vtex");
+	background-size: 50% 50%;
+	background-position: center center;
+	background-repeat: no-repeat;
+	border-radius: 10px;
+}
+.confirmrej:hover{
+	background-color: #444;
+}

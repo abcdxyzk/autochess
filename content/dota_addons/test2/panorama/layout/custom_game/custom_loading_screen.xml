@@ -1,0 +1,47 @@
+<root>
+    <styles>
+        <include src="s2r://panorama/styles/custom_game/custom_loading_screen.vcss_c"/>
+    </styles>
+    <scripts>
+		<include src="s2r://panorama/scripts/custom_game/loading.vjs_c"/>
+    </scripts>
+    <Panel>
+        <!-- loading的图片 png,psd都是可以的 -->
+        <Panel id="dac_loading_pic" class="imageSize" />
+        <Panel id="bg" class="bg" />
+        <!-- <Image id="logo" class="logo" src="s2r://panorama/images/custom_game/dac_logo_png.vtex"/> -->
+		<Image id="logo" class="logo" src="file://{images}/custom_game/loading/myld11.png"/>
+        <Image id="dac_loading_ad0" src="s2r://panorama/images/custom_game/loading/dac_loading_ad0_jpg.vtex"/>
+        <Image id="dac_loading_ad" src=""/>
+        <Image id="dac_loading_ad2" src=""/>
+        <Label id="gametips" text = ""/>
+        <Panel class = "select-board" id = "select-board" hittest = "true">
+        	<Panel class="select_board_outer">
+                <Panel class = "select-block" id = "select-block-difficulty" hittest = "true">
+                    <Label class = "select-title" text = "#text_difficulty_select"></Label>
+                    <Panel class = "select-block-inner" id = "select-difficulty-inner" hittest = "true">
+                        <Panel class="hero_sea_top_panel_summary" onactivate = "select_difficulty(1);">
+                            <Image class="img_difficulty_cloud" src="s2r://panorama/images/custom_game/cloud_png.vtex"/>
+                            <Label id = "text_difficulty_1" class="text_20" text = "#text_difficulty_1"/>
+                        </Panel>
+                        <Panel class="hero_sea_top_panel_summary" onactivate = "select_difficulty(2);">
+                            <Image class="img_difficulty_cloud" src="s2r://panorama/images/custom_game/cloud_png.vtex"/>
+                            <Label id = "text_difficulty_2" class="text_20_highlight" text = "#text_difficulty_2"/>
+                        </Panel>
+                        <Panel class="hero_sea_top_panel_summary" onactivate = "select_difficulty(3);">
+                            <Image class="img_difficulty_cloud" src="s2r://panorama/images/custom_game/cloud_png.vtex"/>
+                            <Label id = "text_difficulty_3" class="text_20" text = "#text_difficulty_3"/>
+                        </Panel>
+                    </Panel>
+                </Panel>
+
+                <Panel class = "select-block" id = "select-block" hittest = "true">
+                    <Label class = "select-title" text = "#hero_select"></Label>
+                    <Panel class = "select-block-inner" id = "select-block-inner" hittest = "true">
+                    </Panel>
+                </Panel>
+                
+            </Panel>
+    	</Panel>
+    </Panel>
+</root>

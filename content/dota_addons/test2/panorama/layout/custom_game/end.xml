@@ -1,0 +1,588 @@
+<root>
+    <styles>
+        <include src="s2r://panorama/styles/custom_game/dac.vcss_c"/>
+    </styles>
+    <scripts>
+		<include src="s2r://panorama/scripts/custom_game/end.vjs_c"/>
+    </scripts>
+
+    
+    <Panel style="width:100%;height:100%;" hittest="false">
+        <!--结束游戏面板-->
+        <Panel id = "race_gameover" class = "" hittest = "true">
+            <Panel class = "race_topbar"><Label text="GAME OVER"></Label></Panel>
+            <Panel class = "race_title">
+                <Panel class = "race_col1"><Label id = "end_rank_0" text = "RANK"></Label></Panel>
+                <Panel class = "race_col2"><Label id = "end_player_0" text = "PLAYER"></Label></Panel>
+                <Panel class = "race_col15"><Label id = "end_level_0" text = "LEVEL"></Label></Panel>
+                <Panel class = "race_col35"><Label id = "end_chess_0" text = "LINEUP"></Label></Panel>
+                <Panel class = "race_col36"><Label id = "end_buff_0" text = "BUFF"></Label></Panel>
+                <Panel class = "race_col15"><Label id = "end_worth_0" text = "WORTH"></Label></Panel>
+                <Panel class = "race_col5"><Label id = "end_win_0" text = "W-L"></Label></Panel>
+                <Panel class = "race_col16"><Label id = "end_damage_0" text = "DAMAGE"></Label></Panel>
+                <Panel class = "race_col9"><Label id = "end_duration_0" text = "DURATION"></Label></Panel>
+                <Panel class = "race_col3"><Label id = "end_award_0" text = "AWARD"></Label></Panel>
+            </Panel>
+
+
+            <Panel class = "race_line_outer">
+                <Panel id = "end_avatar_player_vip_badge_1" class="end_dota_avatar_vip_badge invisible" onmouseover="DOTAShowTextTooltip('#txt_dac_vip')" onmouseout="DOTAHideTextTooltip()"/>
+                <Panel class = "race_line">
+                    <Panel class = "race_col1"><Label id = "end_rank_1" text = "1" class = "invisible"></Label></Panel>
+                    <Panel id="end_board_player_1" class = "race_col2">
+                        <DOTAAvatarImage class="player_avatar" id="end_avatar_1" steamid=""/>
+                        <Panel class="race_col2_right">
+                            <DOTAUserName steamid="" id="end_player_1" class='player_name invisible' style="font-size:40px;height:40px;margin-top:2px;"/>
+                            <Panel class="race_col2_right_bottom">
+                                <Panel id = "end_hero_1" class="img_player_hero invisible"/>
+                                <Panel id = "end_level_1" class="gameover_race_level_pic invisible"/>
+                                <Label id = "end_level_lbl_1" class = "gameover_race_level_lbl" text = ""/>
+                                <Label id = "end_level_lbl_delta_1" class = "gameover_race_level_lbl" text = ""/>
+                            </Panel>
+                        </Panel>
+                        <Panel id="end_avatar_player_vip_1" class="dota_avatar_vip invisible" style="width:251px;"/>
+                        <Image id = "p2team_flag_1" class = "invisible" style = "height:80px;width:6px;margin-left:245px;z-index:500;" src = "s2r://panorama/images/custom_game/p2team_1_png.vtex"/>
+                    </Panel>
+
+                    <Panel id = "panel_end_hero_level_1" class = "race_col15 invisible">
+                        <Panel style="width:50px;height:50px;border-radius:25px;border:4px solid #222;background-color:rgba(0,0,0,0.5);">
+                            <Label id = "end_hero_level_1" text = "" style="text-shadow:0px 0px 3px 3.7 #EC780E24;color:#E7D291;vertical-align:center;horizontal-align:center;width:100%;text-align:center;font-size:28px;"/>
+                        </Panel>
+                    </Panel>
+
+                    <Panel class = "race_col35">
+                        <Panel class="chess_lineup_panel">
+                            <DOTAHeroImage heroname="" heroimagestyle="icon" class="lineup_chess1 invisible" id = "chess_lineup_1_1"/>
+                            <DOTAHeroImage heroname="" heroimagestyle="icon" class="lineup_chess2 invisible" id = "chess_lineup_1_2"/>
+                            <DOTAHeroImage heroname="" heroimagestyle="icon" class="lineup_chess3 invisible" id = "chess_lineup_1_3"/>
+                            <DOTAHeroImage heroname="" heroimagestyle="icon" class="lineup_chess4 invisible" id = "chess_lineup_1_4"/>
+                            <DOTAHeroImage heroname="" heroimagestyle="icon" class="lineup_chess5 invisible" id = "chess_lineup_1_5"/>
+                            <DOTAHeroImage heroname="" heroimagestyle="icon" class="lineup_chess6 invisible" id = "chess_lineup_1_6"/>
+                            <DOTAHeroImage heroname="" heroimagestyle="icon" class="lineup_chess7 invisible" id = "chess_lineup_1_7"/>
+                            <DOTAHeroImage heroname="" heroimagestyle="icon" class="lineup_chess8 invisible" id = "chess_lineup_1_8"/>
+                            <DOTAHeroImage heroname="" heroimagestyle="icon" class="lineup_chess9 invisible" id = "chess_lineup_1_9"/>
+                            <DOTAHeroImage heroname="" heroimagestyle="icon" class="lineup_chess10 invisible" id = "chess_lineup_1_10"/>
+                            <Label id="chess_lineup_star_1_1" class="lineup_star1 invisible" style="horizontal-align:left;vertical-align:top;font-size:10px;text-align:center;"/>
+                            <Label id="chess_lineup_star_1_2" class="lineup_star2 invisible" style="horizontal-align:left;vertical-align:top;font-size:10px;text-align:center;"/>
+                            <Label id="chess_lineup_star_1_3" class="lineup_star3 invisible" style="horizontal-align:left;vertical-align:top;font-size:10px;text-align:center;"/>
+                            <Label id="chess_lineup_star_1_4" class="lineup_star4 invisible" style="horizontal-align:left;vertical-align:top;font-size:10px;text-align:center;"/>
+                            <Label id="chess_lineup_star_1_5" class="lineup_star5 invisible" style="horizontal-align:left;vertical-align:top;font-size:10px;text-align:center;"/>
+                            <Label id="chess_lineup_star_1_6" class="lineup_star6 invisible" style="horizontal-align:left;vertical-align:top;font-size:10px;text-align:center;"/>
+                            <Label id="chess_lineup_star_1_7" class="lineup_star7 invisible" style="horizontal-align:left;vertical-align:top;font-size:10px;text-align:center;"/>
+                            <Label id="chess_lineup_star_1_8" class="lineup_star8 invisible" style="horizontal-align:left;vertical-align:top;font-size:10px;text-align:center;"/>
+                            <Label id="chess_lineup_star_1_9" class="lineup_star9 invisible" style="horizontal-align:left;vertical-align:top;font-size:10px;text-align:center;"/>
+                            <Label id="chess_lineup_star_1_10" class="lineup_star10 invisible" style="horizontal-align:left;vertical-align:top;font-size:10px;text-align:center;"/>
+                        </Panel>
+                    </Panel>
+                    <Panel id = "end_buff_1" class = "race_col36">  
+                    </Panel>
+
+                    <Panel class = "race_col15">
+                        <Label id = "end_money_1" text = ""></Label>
+                    </Panel>
+                    <Panel class = "race_col5"><Label id = "end_win_1" text = ""></Label></Panel>
+                    <Panel class = "race_col16"><Label id = "end_damage_1" text = ""></Label></Panel>
+                    <Panel class = "race_col9"><Label id = "end_duration_1" text = ""></Label></Panel>
+                    <Panel class = "race_col3" id = "panel_end_board_award_1">
+                        <Image id = "img_end_board_candy_1" src="s2r://panorama/images/custom_game/candy_png.vtex" class="img_end_board_award_candy invisible"/>
+                        <Label id = "text_end_board_award_1" text = "× 5" class="text_end_board_award_candy invisible"/>
+                    </Panel>
+                    <Panel id= "panel_end_report_1" class = "race_col9 invisible" onmouseover="DOTAShowTextTooltip('#txt_report')" onmouseout="DOTAHideTextTooltip()" onactivate="report(1)">
+                        <Image id= "img_end_report_1" src="s2r://panorama/images/custom_game/report_white_png.vtex" class="img_end_flag"/>
+                    </Panel>
+                </Panel>
+            </Panel>
+            <Panel class = "race_line_outer">
+                <Panel id = "end_avatar_player_vip_badge_2" class="end_dota_avatar_vip_badge invisible" onmouseover="DOTAShowTextTooltip('#txt_dac_vip')" onmouseout="DOTAHideTextTooltip()"/>
+                <Panel class = "race_line">
+                    <Panel class = "race_col1"><Label id = "end_rank_2" text = "2" class = "invisible"></Label></Panel>
+                    <Panel id="end_board_player_2" class = "race_col2">
+                        <DOTAAvatarImage class="player_avatar" id="end_avatar_2" steamid=""/>
+
+                        <Panel class="race_col2_right">
+                            <DOTAUserName steamid="" id="end_player_2" class='player_name invisible' style="font-size:40px;height:40px;margin-top:0px;"/>
+                            <Panel class="race_col2_right_bottom">
+                                <Panel id = "end_hero_2" class="img_player_hero invisible"/>
+                                <Panel id = "end_level_2" class="gameover_race_level_pic invisible"/>
+                                <Label id = "end_level_lbl_2" class = "gameover_race_level_lbl" text = ""/>
+                                <Label id = "end_level_lbl_delta_2" class = "gameover_race_level_lbl" text = ""/>
+                            </Panel>
+                            <Image id = "p2team_flag_2" class = "invisible" style = "height:80px;width:6px;margin-left:245px;z-index:500;" src = "s2r://panorama/images/custom_game/p2team_1_png.vtex"/>
+                        </Panel>
+                        <Panel id="end_avatar_player_vip_2" class="dota_avatar_vip invisible" style="width:251px;"/>
+                    </Panel>
+
+                    <Panel id = "panel_end_hero_level_2" class = "race_col15 invisible">
+                        <Panel style="width:50px;height:50px;border-radius:25px;border:4px solid #222;background-color:rgba(0,0,0,0.5);">
+                            <Label id = "end_hero_level_2" text = "" style="text-shadow:0px 0px 3px 3.7 #EC780E24;color:#E7D291;vertical-align:center;horizontal-align:center;width:100%;text-align:center;font-size:28px;"/>
+                        </Panel>
+                    </Panel>
+
+                    <Panel class = "race_col35">
+                        <Panel class="chess_lineup_panel">
+                            <DOTAHeroImage heroname="" heroimagestyle="icon" class="lineup_chess1 invisible" id = "chess_lineup_2_1"/>
+                            <DOTAHeroImage heroname="" heroimagestyle="icon" class="lineup_chess2 invisible" id = "chess_lineup_2_2"/>
+                            <DOTAHeroImage heroname="" heroimagestyle="icon" class="lineup_chess3 invisible" id = "chess_lineup_2_3"/>
+                            <DOTAHeroImage heroname="" heroimagestyle="icon" class="lineup_chess4 invisible" id = "chess_lineup_2_4"/>
+                            <DOTAHeroImage heroname="" heroimagestyle="icon" class="lineup_chess5 invisible" id = "chess_lineup_2_5"/>
+                            <DOTAHeroImage heroname="" heroimagestyle="icon" class="lineup_chess6 invisible" id = "chess_lineup_2_6"/>
+                            <DOTAHeroImage heroname="" heroimagestyle="icon" class="lineup_chess7 invisible" id = "chess_lineup_2_7"/>
+                            <DOTAHeroImage heroname="" heroimagestyle="icon" class="lineup_chess8 invisible" id = "chess_lineup_2_8"/>
+                            <DOTAHeroImage heroname="" heroimagestyle="icon" class="lineup_chess9 invisible" id = "chess_lineup_2_9"/>
+                            <DOTAHeroImage heroname="" heroimagestyle="icon" class="lineup_chess10 invisible" id = "chess_lineup_2_10"/>
+                            <Label id="chess_lineup_star_2_1" class="lineup_star1 invisible" style="horizontal-align:left;vertical-align:top;font-size:10px;text-align:center;"/>
+                            <Label id="chess_lineup_star_2_2" class="lineup_star2 invisible" style="horizontal-align:left;vertical-align:top;font-size:10px;text-align:center;"/>
+                            <Label id="chess_lineup_star_2_3" class="lineup_star3 invisible" style="horizontal-align:left;vertical-align:top;font-size:10px;text-align:center;"/>
+                            <Label id="chess_lineup_star_2_4" class="lineup_star4 invisible" style="horizontal-align:left;vertical-align:top;font-size:10px;text-align:center;"/>
+                            <Label id="chess_lineup_star_2_5" class="lineup_star5 invisible" style="horizontal-align:left;vertical-align:top;font-size:10px;text-align:center;"/>
+                            <Label id="chess_lineup_star_2_6" class="lineup_star6 invisible" style="horizontal-align:left;vertical-align:top;font-size:10px;text-align:center;"/>
+                            <Label id="chess_lineup_star_2_7" class="lineup_star7 invisible" style="horizontal-align:left;vertical-align:top;font-size:10px;text-align:center;"/>
+                            <Label id="chess_lineup_star_2_8" class="lineup_star8 invisible" style="horizontal-align:left;vertical-align:top;font-size:10px;text-align:center;"/>
+                            <Label id="chess_lineup_star_2_9" class="lineup_star9 invisible" style="horizontal-align:left;vertical-align:top;font-size:10px;text-align:center;"/>
+                            <Label id="chess_lineup_star_2_10" class="lineup_star10 invisible" style="horizontal-align:left;vertical-align:top;font-size:10px;text-align:center;"/>
+                        </Panel>
+                    </Panel>
+                    <Panel id = "end_buff_2" class = "race_col36">
+                        
+                    </Panel>
+
+                    <Panel class = "race_col15">
+                        <Label id = "end_money_2" text = ""></Label>
+                    </Panel>
+                    <Panel class = "race_col5"><Label id = "end_win_2" text = ""></Label></Panel>
+                    <Panel class = "race_col16"><Label id = "end_damage_2" text = ""></Label></Panel>
+                    <Panel class = "race_col9"><Label id = "end_duration_2" text = ""></Label></Panel>
+                    <Panel class = "race_col3" id = "panel_end_board_award_2">
+                        <Image id = "img_end_board_candy_2" src="s2r://panorama/images/custom_game/candy_png.vtex" class="img_end_board_award_candy invisible"/>
+                        <Label id = "text_end_board_award_2" text = "× 5" class="text_end_board_award_candy invisible"/>
+                    </Panel>
+                    <Panel id= "panel_end_report_2" class = "race_col9 invisible" onmouseover="DOTAShowTextTooltip('#txt_report')" onmouseout="DOTAHideTextTooltip()" onactivate="report(2)">
+                        <Image id= "img_end_report_2" src="s2r://panorama/images/custom_game/report_white_png.vtex" class="img_end_flag"/>
+                    </Panel>
+                </Panel>
+            </Panel>
+            <Panel class = "race_line_outer">
+                <Panel id = "end_avatar_player_vip_badge_3" class="end_dota_avatar_vip_badge invisible" onmouseover="DOTAShowTextTooltip('#txt_dac_vip')" onmouseout="DOTAHideTextTooltip()"/>
+                <Panel class = "race_line">
+                    <Panel class = "race_col1"><Label id = "end_rank_3" text = "3" class = "invisible"></Label></Panel>
+                    <Panel id="end_board_player_3" class = "race_col2">
+                        <DOTAAvatarImage class="player_avatar" id="end_avatar_3" steamid=""/>
+
+                        <Panel class="race_col2_right">
+                            <DOTAUserName steamid="" id="end_player_3" class='player_name invisible' style="font-size:40px;height:40px;margin-top:0px;"/>
+                            <Panel class="race_col2_right_bottom">
+                                <Panel id = "end_hero_3" class="img_player_hero invisible"/>
+                                <Panel id = "end_level_3" class="gameover_race_level_pic invisible"/>
+                                <Label id = "end_level_lbl_3" class = "gameover_race_level_lbl" text = ""/>
+                                <Label id = "end_level_lbl_delta_3" class = "gameover_race_level_lbl" text = ""/>
+                            </Panel>
+                            <Image id = "p2team_flag_3" class = "invisible" style = "height:80px;width:6px;margin-left:245px;z-index:500;" src = "s2r://panorama/images/custom_game/p2team_1_png.vtex"/>
+                        </Panel>
+                        <Panel id="end_avatar_player_vip_3" class="dota_avatar_vip invisible" style="width:251px;"/>
+                    </Panel>
+
+                    <Panel id = "panel_end_hero_level_3" class = "race_col15 invisible">
+                        <Panel style="width:50px;height:50px;border-radius:25px;border:4px solid #222;background-color:rgba(0,0,0,0.5);">
+                            <Label id = "end_hero_level_3" text = "" style="text-shadow:0px 0px 3px 3.7 #EC780E24;color:#E7D291;vertical-align:center;horizontal-align:center;width:100%;text-align:center;font-size:28px;"/>
+                        </Panel>
+                    </Panel>
+
+                    <Panel class = "race_col35">
+                        <Panel class="chess_lineup_panel">
+                            <DOTAHeroImage heroname="" heroimagestyle="icon" class="lineup_chess1 invisible" id = "chess_lineup_3_1"/>
+                            <DOTAHeroImage heroname="" heroimagestyle="icon" class="lineup_chess2 invisible" id = "chess_lineup_3_2"/>
+                            <DOTAHeroImage heroname="" heroimagestyle="icon" class="lineup_chess3 invisible" id = "chess_lineup_3_3"/>
+                            <DOTAHeroImage heroname="" heroimagestyle="icon" class="lineup_chess4 invisible" id = "chess_lineup_3_4"/>
+                            <DOTAHeroImage heroname="" heroimagestyle="icon" class="lineup_chess5 invisible" id = "chess_lineup_3_5"/>
+                            <DOTAHeroImage heroname="" heroimagestyle="icon" class="lineup_chess6 invisible" id = "chess_lineup_3_6"/>
+                            <DOTAHeroImage heroname="" heroimagestyle="icon" class="lineup_chess7 invisible" id = "chess_lineup_3_7"/>
+                            <DOTAHeroImage heroname="" heroimagestyle="icon" class="lineup_chess8 invisible" id = "chess_lineup_3_8"/>
+                            <DOTAHeroImage heroname="" heroimagestyle="icon" class="lineup_chess9 invisible" id = "chess_lineup_3_9"/>
+                            <DOTAHeroImage heroname="" heroimagestyle="icon" class="lineup_chess10 invisible" id = "chess_lineup_3_10"/>
+                            <Label id="chess_lineup_star_3_1" class="lineup_star1 invisible" style="horizontal-align:left;vertical-align:top;font-size:10px;text-align:center;"/>
+                            <Label id="chess_lineup_star_3_2" class="lineup_star2 invisible" style="horizontal-align:left;vertical-align:top;font-size:10px;text-align:center;"/>
+                            <Label id="chess_lineup_star_3_3" class="lineup_star3 invisible" style="horizontal-align:left;vertical-align:top;font-size:10px;text-align:center;"/>
+                            <Label id="chess_lineup_star_3_4" class="lineup_star4 invisible" style="horizontal-align:left;vertical-align:top;font-size:10px;text-align:center;"/>
+                            <Label id="chess_lineup_star_3_5" class="lineup_star5 invisible" style="horizontal-align:left;vertical-align:top;font-size:10px;text-align:center;"/>
+                            <Label id="chess_lineup_star_3_6" class="lineup_star6 invisible" style="horizontal-align:left;vertical-align:top;font-size:10px;text-align:center;"/>
+                            <Label id="chess_lineup_star_3_7" class="lineup_star7 invisible" style="horizontal-align:left;vertical-align:top;font-size:10px;text-align:center;"/>
+                            <Label id="chess_lineup_star_3_8" class="lineup_star8 invisible" style="horizontal-align:left;vertical-align:top;font-size:10px;text-align:center;"/>
+                            <Label id="chess_lineup_star_3_9" class="lineup_star9 invisible" style="horizontal-align:left;vertical-align:top;font-size:10px;text-align:center;"/>
+                            <Label id="chess_lineup_star_3_10" class="lineup_star10 invisible" style="horizontal-align:left;vertical-align:top;font-size:10px;text-align:center;"/>
+                        </Panel>
+                    </Panel>
+                    <Panel id = "end_buff_3" class = "race_col36">
+                        
+                    </Panel>
+
+                    <Panel class = "race_col15">
+                        <Label id = "end_money_3" text = ""></Label>
+                    </Panel>
+                    <Panel class = "race_col5"><Label id = "end_win_3" text = ""></Label></Panel>
+                    <Panel class = "race_col16"><Label id = "end_damage_3" text = ""></Label></Panel>
+                    <Panel class = "race_col9"><Label id = "end_duration_3" text = ""></Label></Panel>
+                    <Panel class = "race_col3" id = "panel_end_board_award_3">
+                        <Image id = "img_end_board_candy_3" src="s2r://panorama/images/custom_game/candy_png.vtex" class="img_end_board_award_candy invisible"/>
+                        <Label id = "text_end_board_award_3" text = "× 5" class="text_end_board_award_candy invisible"/>
+                    </Panel>
+                    <Panel id= "panel_end_report_3" class = "race_col9 invisible" onmouseover="DOTAShowTextTooltip('#txt_report')" onmouseout="DOTAHideTextTooltip()" onactivate="report(3)">
+                        <Image id= "img_end_report_3" src="s2r://panorama/images/custom_game/report_white_png.vtex" class="img_end_flag"/>
+                    </Panel>
+                </Panel>
+            </Panel>
+            <Panel class = "race_line_outer">
+                <Panel id = "end_avatar_player_vip_badge_4" class="end_dota_avatar_vip_badge invisible" onmouseover="DOTAShowTextTooltip('#txt_dac_vip')" onmouseout="DOTAHideTextTooltip()"/>
+                <Panel class = "race_line">
+                    <Panel class = "race_col1"><Label id = "end_rank_4" text = "4" class = "invisible"></Label></Panel>
+                    <Panel id="end_board_player_4" class = "race_col2">
+                        <DOTAAvatarImage class="player_avatar" id="end_avatar_4" steamid=""/>
+
+                        <Panel class="race_col2_right">
+                            <DOTAUserName steamid="" id="end_player_4" class='player_name invisible' style="font-size:40px;height:40px;margin-top:0px;"/>
+                            <Panel class="race_col2_right_bottom">
+                                <Panel id = "end_hero_4" class="img_player_hero invisible"/>
+                                <Panel id = "end_level_4" class="gameover_race_level_pic invisible"/>
+                                <Label id = "end_level_lbl_4" class = "gameover_race_level_lbl" text = ""/>
+                                <Label id = "end_level_lbl_delta_4" class = "gameover_race_level_lbl" text = ""/>
+                            </Panel>
+                            <Image id = "p2team_flag_4" class = "invisible" style = "height:80px;width:6px;margin-left:245px;z-index:500;" src = "s2r://panorama/images/custom_game/p2team_1_png.vtex"/>
+                        </Panel>
+                        <Panel id="end_avatar_player_vip_4" class="dota_avatar_vip invisible" style="width:251px;"/>
+                    </Panel>
+
+                    <Panel id = "panel_end_hero_level_4" class = "race_col15 invisible">
+                        <Panel style="width:50px;height:50px;border-radius:25px;border:4px solid #222;background-color:rgba(0,0,0,0.5);">
+                            <Label id = "end_hero_level_4" text = "" style="text-shadow:0px 0px 3px 3.7 #EC780E24;color:#E7D291;vertical-align:center;horizontal-align:center;width:100%;text-align:center;font-size:28px;"/>
+                        </Panel>
+                    </Panel>
+
+                    <Panel class = "race_col35">
+                        <Panel class="chess_lineup_panel">
+                            <DOTAHeroImage heroname="" heroimagestyle="icon" class="lineup_chess1 invisible" id = "chess_lineup_4_1"/>
+                            <DOTAHeroImage heroname="" heroimagestyle="icon" class="lineup_chess2 invisible" id = "chess_lineup_4_2"/>
+                            <DOTAHeroImage heroname="" heroimagestyle="icon" class="lineup_chess3 invisible" id = "chess_lineup_4_3"/>
+                            <DOTAHeroImage heroname="" heroimagestyle="icon" class="lineup_chess4 invisible" id = "chess_lineup_4_4"/>
+                            <DOTAHeroImage heroname="" heroimagestyle="icon" class="lineup_chess5 invisible" id = "chess_lineup_4_5"/>
+                            <DOTAHeroImage heroname="" heroimagestyle="icon" class="lineup_chess6 invisible" id = "chess_lineup_4_6"/>
+                            <DOTAHeroImage heroname="" heroimagestyle="icon" class="lineup_chess7 invisible" id = "chess_lineup_4_7"/>
+                            <DOTAHeroImage heroname="" heroimagestyle="icon" class="lineup_chess8 invisible" id = "chess_lineup_4_8"/>
+                            <DOTAHeroImage heroname="" heroimagestyle="icon" class="lineup_chess9 invisible" id = "chess_lineup_4_9"/>
+                            <DOTAHeroImage heroname="" heroimagestyle="icon" class="lineup_chess10 invisible" id = "chess_lineup_4_10"/>
+                            <Label id="chess_lineup_star_4_1" class="lineup_star1 invisible" style="horizontal-align:left;vertical-align:top;font-size:10px;text-align:center;"/>
+                            <Label id="chess_lineup_star_4_2" class="lineup_star2 invisible" style="horizontal-align:left;vertical-align:top;font-size:10px;text-align:center;"/>
+                            <Label id="chess_lineup_star_4_3" class="lineup_star3 invisible" style="horizontal-align:left;vertical-align:top;font-size:10px;text-align:center;"/>
+                            <Label id="chess_lineup_star_4_4" class="lineup_star4 invisible" style="horizontal-align:left;vertical-align:top;font-size:10px;text-align:center;"/>
+                            <Label id="chess_lineup_star_4_5" class="lineup_star5 invisible" style="horizontal-align:left;vertical-align:top;font-size:10px;text-align:center;"/>
+                            <Label id="chess_lineup_star_4_6" class="lineup_star6 invisible" style="horizontal-align:left;vertical-align:top;font-size:10px;text-align:center;"/>
+                            <Label id="chess_lineup_star_4_7" class="lineup_star7 invisible" style="horizontal-align:left;vertical-align:top;font-size:10px;text-align:center;"/>
+                            <Label id="chess_lineup_star_4_8" class="lineup_star8 invisible" style="horizontal-align:left;vertical-align:top;font-size:10px;text-align:center;"/>
+                            <Label id="chess_lineup_star_4_9" class="lineup_star9 invisible" style="horizontal-align:left;vertical-align:top;font-size:10px;text-align:center;"/>
+                            <Label id="chess_lineup_star_4_10" class="lineup_star10 invisible" style="horizontal-align:left;vertical-align:top;font-size:10px;text-align:center;"/>
+                        </Panel>
+                    </Panel>
+                    <Panel id = "end_buff_4" class = "race_col36">
+                        
+                    </Panel>
+
+                    <Panel class = "race_col15">
+                        <Label id = "end_money_4" text = ""></Label>
+                    </Panel>
+                    <Panel class = "race_col5"><Label id = "end_win_4" text = ""></Label></Panel>
+                    <Panel class = "race_col16"><Label id = "end_damage_4" text = ""></Label></Panel>
+                    <Panel class = "race_col9"><Label id = "end_duration_4" text = ""></Label></Panel>
+                    <Panel class = "race_col3" id = "panel_end_board_award_4">
+                        <Image id = "img_end_board_candy_4" src="s2r://panorama/images/custom_game/candy_png.vtex" class="img_end_board_award_candy invisible"/>
+                        <Label id = "text_end_board_award_4" text = "× 5" class="text_end_board_award_candy invisible"/>
+                    </Panel>
+                    <Panel id= "panel_end_report_4" class = "race_col9 invisible" onmouseover="DOTAShowTextTooltip('#txt_report')" onmouseout="DOTAHideTextTooltip()" onactivate="report(4)">
+                        <Image id= "img_end_report_4" src="s2r://panorama/images/custom_game/report_white_png.vtex" class="img_end_flag"/>
+                    </Panel>
+                </Panel>
+            </Panel>
+            <Panel class = "race_line_outer">
+                <Panel id = "end_avatar_player_vip_badge_5" class="end_dota_avatar_vip_badge invisible" onmouseover="DOTAShowTextTooltip('#txt_dac_vip')" onmouseout="DOTAHideTextTooltip()"/>
+                <Panel class = "race_line">
+                    <Panel class = "race_col1"><Label id = "end_rank_5" text = "5" class = "invisible"></Label></Panel>
+                    <Panel id="end_board_player_5" class = "race_col2">
+                        <DOTAAvatarImage class="player_avatar" id="end_avatar_5" steamid=""/>
+
+                        <Panel class="race_col2_right">
+                            <DOTAUserName steamid="" id="end_player_5" class='player_name invisible' style="font-size:40px;height:40px;margin-top:0px;"/>
+                            <Panel class="race_col2_right_bottom">
+                                <Panel id = "end_hero_5" class="img_player_hero invisible"/>
+                                <Panel id = "end_level_5" class="gameover_race_level_pic invisible"/>
+                                <Label id = "end_level_lbl_5" class = "gameover_race_level_lbl" text = ""/>
+                                <Label id = "end_level_lbl_delta_5" class = "gameover_race_level_lbl" text = ""/>
+                            </Panel>
+                            <Image id = "p2team_flag_5" class = "invisible" style = "height:80px;width:6px;margin-left:245px;z-index:500;" src = "s2r://panorama/images/custom_game/p2team_1_png.vtex"/>
+                        </Panel>
+
+                        <Panel id="end_avatar_player_vip_5" class="dota_avatar_vip invisible" style="width:251px;"/>
+                    </Panel>
+
+                    <Panel id = "panel_end_hero_level_5" class = "race_col15 invisible">
+                        <Panel style="width:50px;height:50px;border-radius:25px;border:4px solid #222;background-color:rgba(0,0,0,0.5);">
+                            <Label id = "end_hero_level_5" text = "" style="text-shadow:0px 0px 3px 3.7 #EC780E24;color:#E7D291;vertical-align:center;horizontal-align:center;width:100%;text-align:center;font-size:28px;"/>
+                        </Panel>
+                    </Panel>
+
+                    <Panel class = "race_col35">
+                        <Panel class="chess_lineup_panel">
+                            <DOTAHeroImage heroname="" heroimagestyle="icon" class="lineup_chess1 invisible" id = "chess_lineup_5_1"/>
+                            <DOTAHeroImage heroname="" heroimagestyle="icon" class="lineup_chess2 invisible" id = "chess_lineup_5_2"/>
+                            <DOTAHeroImage heroname="" heroimagestyle="icon" class="lineup_chess3 invisible" id = "chess_lineup_5_3"/>
+                            <DOTAHeroImage heroname="" heroimagestyle="icon" class="lineup_chess4 invisible" id = "chess_lineup_5_4"/>
+                            <DOTAHeroImage heroname="" heroimagestyle="icon" class="lineup_chess5 invisible" id = "chess_lineup_5_5"/>
+                            <DOTAHeroImage heroname="" heroimagestyle="icon" class="lineup_chess6 invisible" id = "chess_lineup_5_6"/>
+                            <DOTAHeroImage heroname="" heroimagestyle="icon" class="lineup_chess7 invisible" id = "chess_lineup_5_7"/>
+                            <DOTAHeroImage heroname="" heroimagestyle="icon" class="lineup_chess8 invisible" id = "chess_lineup_5_8"/>
+                            <DOTAHeroImage heroname="" heroimagestyle="icon" class="lineup_chess9 invisible" id = "chess_lineup_5_9"/>
+                            <DOTAHeroImage heroname="" heroimagestyle="icon" class="lineup_chess10 invisible" id = "chess_lineup_5_10"/>
+                            <Label id="chess_lineup_star_5_1" class="lineup_star1 invisible" style="horizontal-align:left;vertical-align:top;font-size:10px;text-align:center;"/>
+                            <Label id="chess_lineup_star_5_2" class="lineup_star2 invisible" style="horizontal-align:left;vertical-align:top;font-size:10px;text-align:center;"/>
+                            <Label id="chess_lineup_star_5_3" class="lineup_star3 invisible" style="horizontal-align:left;vertical-align:top;font-size:10px;text-align:center;"/>
+                            <Label id="chess_lineup_star_5_4" class="lineup_star4 invisible" style="horizontal-align:left;vertical-align:top;font-size:10px;text-align:center;"/>
+                            <Label id="chess_lineup_star_5_5" class="lineup_star5 invisible" style="horizontal-align:left;vertical-align:top;font-size:10px;text-align:center;"/>
+                            <Label id="chess_lineup_star_5_6" class="lineup_star6 invisible" style="horizontal-align:left;vertical-align:top;font-size:10px;text-align:center;"/>
+                            <Label id="chess_lineup_star_5_7" class="lineup_star7 invisible" style="horizontal-align:left;vertical-align:top;font-size:10px;text-align:center;"/>
+                            <Label id="chess_lineup_star_5_8" class="lineup_star8 invisible" style="horizontal-align:left;vertical-align:top;font-size:10px;text-align:center;"/>
+                            <Label id="chess_lineup_star_5_9" class="lineup_star9 invisible" style="horizontal-align:left;vertical-align:top;font-size:10px;text-align:center;"/>
+                            <Label id="chess_lineup_star_5_10" class="lineup_star10 invisible" style="horizontal-align:left;vertical-align:top;font-size:10px;text-align:center;"/>
+                        </Panel>
+                    </Panel>
+                    <Panel id = "end_buff_5" class = "race_col36">
+                        
+                    </Panel>
+
+                    <Panel class = "race_col15">
+                        <Label id = "end_money_5" text = ""></Label>
+                    </Panel>
+                    <Panel class = "race_col5"><Label id = "end_win_5" text = ""></Label></Panel>
+                    <Panel class = "race_col16"><Label id = "end_damage_5" text = ""></Label></Panel>
+                    <Panel class = "race_col9"><Label id = "end_duration_5" text = ""></Label></Panel>
+                    <Panel class = "race_col3" id = "panel_end_board_award_5">
+                        <Image id = "img_end_board_candy_5" src="s2r://panorama/images/custom_game/candy_png.vtex" class="img_end_board_award_candy invisible"/>
+                        <Label id = "text_end_board_award_5" text = "× 5" class="text_end_board_award_candy invisible"/>
+                    </Panel>
+                    <Panel id= "panel_end_report_5" class = "race_col9 invisible" onmouseover="DOTAShowTextTooltip('#txt_report')" onmouseout="DOTAHideTextTooltip()" onactivate="report(5)">
+                        <Image id= "img_end_report_5" src="s2r://panorama/images/custom_game/report_white_png.vtex" class="img_end_flag"/>
+                    </Panel>
+                </Panel>
+            </Panel>
+            <Panel class = "race_line_outer">
+                <Panel id = "end_avatar_player_vip_badge_6" class="end_dota_avatar_vip_badge invisible" onmouseover="DOTAShowTextTooltip('#txt_dac_vip')" onmouseout="DOTAHideTextTooltip()"/>
+                <Panel class = "race_line">
+                    <Panel class = "race_col1"><Label id = "end_rank_6" text = "6" class = "invisible"></Label></Panel>
+                    <Panel id="end_board_player_6" class = "race_col2">
+                        <DOTAAvatarImage class="player_avatar" id="end_avatar_6" steamid=""/>
+
+                        <Panel class="race_col2_right">
+                            <DOTAUserName steamid="" id="end_player_6" class='player_name invisible' style="font-size:40px;height:40px;margin-top:0px;"/>
+                            <Panel class="race_col2_right_bottom">
+                                <Panel id = "end_hero_6" class="img_player_hero invisible"/>
+                                <Panel id = "end_level_6" class="gameover_race_level_pic invisible"/>
+                                <Label id = "end_level_lbl_6" class = "gameover_race_level_lbl" text = ""/>
+                                <Label id = "end_level_lbl_delta_6" class = "gameover_race_level_lbl" text = ""/>
+                            </Panel>
+                            <Image id = "p2team_flag_6" class = "invisible" style = "height:80px;width:6px;margin-left:245px;z-index:500;" src = "s2r://panorama/images/custom_game/p2team_1_png.vtex"/>
+                        </Panel>
+                        <Panel id="end_avatar_player_vip_6" class="dota_avatar_vip invisible" style="width:251px;"/>
+                    </Panel>
+
+                    <Panel id = "panel_end_hero_level_6" class = "race_col15 invisible">
+                        <Panel style="width:50px;height:50px;border-radius:25px;border:4px solid #222;background-color:rgba(0,0,0,0.5);">
+                            <Label id = "end_hero_level_6" text = "" style="text-shadow:0px 0px 3px 3.7 #EC780E24;color:#E7D291;vertical-align:center;horizontal-align:center;width:100%;text-align:center;font-size:28px;"/>
+                        </Panel>
+                    </Panel>
+
+                    <Panel class = "race_col35">
+                        <Panel class="chess_lineup_panel">
+                            <DOTAHeroImage heroname="" heroimagestyle="icon" class="lineup_chess1 invisible" id = "chess_lineup_6_1"/>
+                            <DOTAHeroImage heroname="" heroimagestyle="icon" class="lineup_chess2 invisible" id = "chess_lineup_6_2"/>
+                            <DOTAHeroImage heroname="" heroimagestyle="icon" class="lineup_chess3 invisible" id = "chess_lineup_6_3"/>
+                            <DOTAHeroImage heroname="" heroimagestyle="icon" class="lineup_chess4 invisible" id = "chess_lineup_6_4"/>
+                            <DOTAHeroImage heroname="" heroimagestyle="icon" class="lineup_chess5 invisible" id = "chess_lineup_6_5"/>
+                            <DOTAHeroImage heroname="" heroimagestyle="icon" class="lineup_chess6 invisible" id = "chess_lineup_6_6"/>
+                            <DOTAHeroImage heroname="" heroimagestyle="icon" class="lineup_chess7 invisible" id = "chess_lineup_6_7"/>
+                            <DOTAHeroImage heroname="" heroimagestyle="icon" class="lineup_chess8 invisible" id = "chess_lineup_6_8"/>
+                            <DOTAHeroImage heroname="" heroimagestyle="icon" class="lineup_chess9 invisible" id = "chess_lineup_6_9"/>
+                            <DOTAHeroImage heroname="" heroimagestyle="icon" class="lineup_chess10 invisible" id = "chess_lineup_6_10"/>
+                            <Label id="chess_lineup_star_6_1" class="lineup_star1 invisible" style="horizontal-align:left;vertical-align:top;font-size:10px;text-align:center;"/>
+                            <Label id="chess_lineup_star_6_2" class="lineup_star2 invisible" style="horizontal-align:left;vertical-align:top;font-size:10px;text-align:center;"/>
+                            <Label id="chess_lineup_star_6_3" class="lineup_star3 invisible" style="horizontal-align:left;vertical-align:top;font-size:10px;text-align:center;"/>
+                            <Label id="chess_lineup_star_6_4" class="lineup_star4 invisible" style="horizontal-align:left;vertical-align:top;font-size:10px;text-align:center;"/>
+                            <Label id="chess_lineup_star_6_5" class="lineup_star5 invisible" style="horizontal-align:left;vertical-align:top;font-size:10px;text-align:center;"/>
+                            <Label id="chess_lineup_star_6_6" class="lineup_star6 invisible" style="horizontal-align:left;vertical-align:top;font-size:10px;text-align:center;"/>
+                            <Label id="chess_lineup_star_6_7" class="lineup_star7 invisible" style="horizontal-align:left;vertical-align:top;font-size:10px;text-align:center;"/>
+                            <Label id="chess_lineup_star_6_8" class="lineup_star8 invisible" style="horizontal-align:left;vertical-align:top;font-size:10px;text-align:center;"/>
+                            <Label id="chess_lineup_star_6_9" class="lineup_star9 invisible" style="horizontal-align:left;vertical-align:top;font-size:10px;text-align:center;"/>
+                            <Label id="chess_lineup_star_6_10" class="lineup_star10 invisible" style="horizontal-align:left;vertical-align:top;font-size:10px;text-align:center;"/>
+                        </Panel>
+                    </Panel>
+                    <Panel id = "end_buff_6" class = "race_col36">
+                        
+                    </Panel>
+
+                    <Panel class = "race_col15">
+                        <Label id = "end_money_6" text = ""></Label>
+                    </Panel>
+                    <Panel class = "race_col5"><Label id = "end_win_6" text = ""></Label></Panel>
+                    <Panel class = "race_col16"><Label id = "end_damage_6" text = ""></Label></Panel>
+                    <Panel class = "race_col9"><Label id = "end_duration_6" text = ""></Label></Panel>
+                    <Panel class = "race_col3" id = "panel_end_board_award_6">
+                        <Image id = "img_end_board_candy_6" src="s2r://panorama/images/custom_game/candy_png.vtex" class="img_end_board_award_candy invisible"/>
+                        <Label id = "text_end_board_award_6" text = "× 5" class="text_end_board_award_candy invisible"/>
+                    </Panel>
+                    <Panel id= "panel_end_report_6" class = "race_col9 invisible" onmouseover="DOTAShowTextTooltip('#txt_report')" onmouseout="DOTAHideTextTooltip()" onactivate="report(6)">
+                        <Image id= "img_end_report_6" src="s2r://panorama/images/custom_game/report_white_png.vtex" class="img_end_flag"/>
+                    </Panel>
+                </Panel>
+            </Panel>
+            <Panel class = "race_line_outer">
+                <Panel id = "end_avatar_player_vip_badge_7" class="end_dota_avatar_vip_badge invisible" onmouseover="DOTAShowTextTooltip('#txt_dac_vip')" onmouseout="DOTAHideTextTooltip()"/>
+                <Panel class = "race_line">
+                    <Panel class = "race_col1"><Label id = "end_rank_7" text = "7" class = "invisible"></Label></Panel>
+                    <Panel id="end_board_player_7" class = "race_col2">
+                        <DOTAAvatarImage class="player_avatar" id="end_avatar_7" steamid=""/>
+
+                        <Panel class="race_col2_right">
+                            <DOTAUserName steamid="" id="end_player_7" class='player_name invisible' style="font-size:40px;height:40px;margin-top:0px;"/>
+                            <Panel class="race_col2_right_bottom">
+                                <Panel id = "end_hero_7" class="img_player_hero invisible"/>
+                                <Panel id = "end_level_7" class="gameover_race_level_pic invisible"/>
+                                <Label id = "end_level_lbl_7" class = "gameover_race_level_lbl" text = ""/>
+                                <Label id = "end_level_lbl_delta_7" class = "gameover_race_level_lbl" text = ""/>
+                            </Panel>
+                            <Image id = "p2team_flag_7" class = "invisible" style = "height:80px;width:6px;margin-left:245px;z-index:500;" src = "s2r://panorama/images/custom_game/p2team_1_png.vtex"/>
+                        </Panel>
+                        <Panel id="end_avatar_player_vip_7" class="dota_avatar_vip invisible" style="width:251px;"/>
+                    </Panel>
+
+                    <Panel id = "panel_end_hero_level_7" class = "race_col15 invisible">
+                        <Panel style="width:50px;height:50px;border-radius:25px;border:4px solid #222;background-color:rgba(0,0,0,0.5);">
+                            <Label id = "end_hero_level_7" text = "" style="text-shadow:0px 0px 3px 3.7 #EC780E24;color:#E7D291;vertical-align:center;horizontal-align:center;width:100%;text-align:center;font-size:28px;"/>
+                        </Panel>
+                    </Panel>
+
+                    <Panel class = "race_col35">
+                        <Panel class="chess_lineup_panel">
+                            <DOTAHeroImage heroname="" heroimagestyle="icon" class="lineup_chess1 invisible" id = "chess_lineup_7_1"/>
+                            <DOTAHeroImage heroname="" heroimagestyle="icon" class="lineup_chess2 invisible" id = "chess_lineup_7_2"/>
+                            <DOTAHeroImage heroname="" heroimagestyle="icon" class="lineup_chess3 invisible" id = "chess_lineup_7_3"/>
+                            <DOTAHeroImage heroname="" heroimagestyle="icon" class="lineup_chess4 invisible" id = "chess_lineup_7_4"/>
+                            <DOTAHeroImage heroname="" heroimagestyle="icon" class="lineup_chess5 invisible" id = "chess_lineup_7_5"/>
+                            <DOTAHeroImage heroname="" heroimagestyle="icon" class="lineup_chess6 invisible" id = "chess_lineup_7_6"/>
+                            <DOTAHeroImage heroname="" heroimagestyle="icon" class="lineup_chess7 invisible" id = "chess_lineup_7_7"/>
+                            <DOTAHeroImage heroname="" heroimagestyle="icon" class="lineup_chess8 invisible" id = "chess_lineup_7_8"/>
+                            <DOTAHeroImage heroname="" heroimagestyle="icon" class="lineup_chess9 invisible" id = "chess_lineup_7_9"/>
+                            <DOTAHeroImage heroname="" heroimagestyle="icon" class="lineup_chess10 invisible" id = "chess_lineup_7_10"/>
+                            <Label id="chess_lineup_star_7_1" class="lineup_star1 invisible" style="horizontal-align:left;vertical-align:top;font-size:10px;text-align:center;"/>
+                            <Label id="chess_lineup_star_7_2" class="lineup_star2 invisible" style="horizontal-align:left;vertical-align:top;font-size:10px;text-align:center;"/>
+                            <Label id="chess_lineup_star_7_3" class="lineup_star3 invisible" style="horizontal-align:left;vertical-align:top;font-size:10px;text-align:center;"/>
+                            <Label id="chess_lineup_star_7_4" class="lineup_star4 invisible" style="horizontal-align:left;vertical-align:top;font-size:10px;text-align:center;"/>
+                            <Label id="chess_lineup_star_7_5" class="lineup_star5 invisible" style="horizontal-align:left;vertical-align:top;font-size:10px;text-align:center;"/>
+                            <Label id="chess_lineup_star_7_6" class="lineup_star6 invisible" style="horizontal-align:left;vertical-align:top;font-size:10px;text-align:center;"/>
+                            <Label id="chess_lineup_star_7_7" class="lineup_star7 invisible" style="horizontal-align:left;vertical-align:top;font-size:10px;text-align:center;"/>
+                            <Label id="chess_lineup_star_7_8" class="lineup_star8 invisible" style="horizontal-align:left;vertical-align:top;font-size:10px;text-align:center;"/>
+                            <Label id="chess_lineup_star_7_9" class="lineup_star9 invisible" style="horizontal-align:left;vertical-align:top;font-size:10px;text-align:center;"/>
+                            <Label id="chess_lineup_star_7_10" class="lineup_star10 invisible" style="horizontal-align:left;vertical-align:top;font-size:10px;text-align:center;"/>
+                        </Panel>
+                    </Panel>
+                    <Panel id = "end_buff_7" class = "race_col36">
+                        
+                    </Panel>
+
+                    <Panel class = "race_col15">
+                        <Label id = "end_money_7" text = ""></Label>
+                    </Panel>
+                    <Panel class = "race_col5"><Label id = "end_win_7" text = ""></Label></Panel>
+                    <Panel class = "race_col16"><Label id = "end_damage_7" text = ""></Label></Panel>
+                    <Panel class = "race_col9"><Label id = "end_duration_7" text = ""></Label></Panel>
+                    <Panel class = "race_col3" id = "panel_end_board_award_7">
+                        <Image id = "img_end_board_candy_7" src="s2r://panorama/images/custom_game/candy_png.vtex" class="img_end_board_award_candy invisible"/>
+                        <Label id = "text_end_board_award_7" text = "× 5" class="text_end_board_award_candy invisible"/>
+                    </Panel>
+                    <Panel id= "panel_end_report_7" class = "race_col9 invisible" onmouseover="DOTAShowTextTooltip('#txt_report')" onmouseout="DOTAHideTextTooltip()" onactivate="report(7)">
+                        <Image id= "img_end_report_7" src="s2r://panorama/images/custom_game/report_white_png.vtex" class="img_end_flag"/>
+                    </Panel>
+                </Panel>
+            </Panel>
+            <Panel class = "race_line_outer">
+                <Panel id = "end_avatar_player_vip_badge_8" class="end_dota_avatar_vip_badge invisible" onmouseover="DOTAShowTextTooltip('#txt_dac_vip')" onmouseout="DOTAHideTextTooltip()"/>
+                <Panel class = "race_line">
+                    <Panel class = "race_col1"><Label id = "end_rank_8" text = "8" class = "invisible"></Label></Panel>
+                    <Panel id="end_board_player_8" class = "race_col2">
+                        <DOTAAvatarImage class="player_avatar" id="end_avatar_8" steamid=""/>
+
+                        <Panel class="race_col2_right">
+                            <DOTAUserName steamid="" id="end_player_8" class='player_name invisible' style="font-size:40px;height:40px;margin-top:0px;"/>
+                            <Panel class="race_col2_right_bottom">
+                                <Panel id = "end_hero_8" class="img_player_hero invisible"/>
+                                <Panel id = "end_level_8" class="gameover_race_level_pic invisible"/>
+                                <Label id = "end_level_lbl_8" class = "gameover_race_level_lbl" text = ""/>
+                                <Label id = "end_level_lbl_delta_8" class = "gameover_race_level_lbl" text = ""/>
+                            </Panel>
+                            <Image id = "p2team_flag_8" class = "invisible" style = "height:80px;width:6px;margin-left:245px;z-index:500;" src = "s2r://panorama/images/custom_game/p2team_1_png.vtex"/>
+                        </Panel>
+                        <Panel id="end_avatar_player_vip_8" class="dota_avatar_vip invisible" style="width:251px;"/>
+                    </Panel>
+
+                    <Panel id = "panel_end_hero_level_8" class = "race_col15 invisible">
+                        <Panel style="width:50px;height:50px;border-radius:25px;border:4px solid #222;background-color:rgba(0,0,0,0.5);">
+                            <Label id = "end_hero_level_8" text = "" style="text-shadow:0px 0px 3px 3.7 #EC780E24;color:#E7D291;vertical-align:center;horizontal-align:center;width:100%;text-align:center;font-size:28px;"/>
+                        </Panel>
+                    </Panel>
+
+                    <Panel class = "race_col35">
+                        <Panel class="chess_lineup_panel">
+                            <DOTAHeroImage heroname="" heroimagestyle="icon" class="lineup_chess1 invisible" id = "chess_lineup_8_1"/>
+                            <DOTAHeroImage heroname="" heroimagestyle="icon" class="lineup_chess2 invisible" id = "chess_lineup_8_2"/>
+                            <DOTAHeroImage heroname="" heroimagestyle="icon" class="lineup_chess3 invisible" id = "chess_lineup_8_3"/>
+                            <DOTAHeroImage heroname="" heroimagestyle="icon" class="lineup_chess4 invisible" id = "chess_lineup_8_4"/>
+                            <DOTAHeroImage heroname="" heroimagestyle="icon" class="lineup_chess5 invisible" id = "chess_lineup_8_5"/>
+                            <DOTAHeroImage heroname="" heroimagestyle="icon" class="lineup_chess6 invisible" id = "chess_lineup_8_6"/>
+                            <DOTAHeroImage heroname="" heroimagestyle="icon" class="lineup_chess7 invisible" id = "chess_lineup_8_7"/>
+                            <DOTAHeroImage heroname="" heroimagestyle="icon" class="lineup_chess8 invisible" id = "chess_lineup_8_8"/>
+                            <DOTAHeroImage heroname="" heroimagestyle="icon" class="lineup_chess9 invisible" id = "chess_lineup_8_9"/>
+                            <DOTAHeroImage heroname="" heroimagestyle="icon" class="lineup_chess10 invisible" id = "chess_lineup_8_10"/>
+                            <Label id="chess_lineup_star_8_1" class="lineup_star1 invisible" style="horizontal-align:left;vertical-align:top;font-size:10px;text-align:center;"/>
+                            <Label id="chess_lineup_star_8_2" class="lineup_star2 invisible" style="horizontal-align:left;vertical-align:top;font-size:10px;text-align:center;"/>
+                            <Label id="chess_lineup_star_8_3" class="lineup_star3 invisible" style="horizontal-align:left;vertical-align:top;font-size:10px;text-align:center;"/>
+                            <Label id="chess_lineup_star_8_4" class="lineup_star4 invisible" style="horizontal-align:left;vertical-align:top;font-size:10px;text-align:center;"/>
+                            <Label id="chess_lineup_star_8_5" class="lineup_star5 invisible" style="horizontal-align:left;vertical-align:top;font-size:10px;text-align:center;"/>
+                            <Label id="chess_lineup_star_8_6" class="lineup_star6 invisible" style="horizontal-align:left;vertical-align:top;font-size:10px;text-align:center;"/>
+                            <Label id="chess_lineup_star_8_7" class="lineup_star7 invisible" style="horizontal-align:left;vertical-align:top;font-size:10px;text-align:center;"/>
+                            <Label id="chess_lineup_star_8_8" class="lineup_star8 invisible" style="horizontal-align:left;vertical-align:top;font-size:10px;text-align:center;"/>
+                            <Label id="chess_lineup_star_8_9" class="lineup_star9 invisible" style="horizontal-align:left;vertical-align:top;font-size:10px;text-align:center;"/>
+                            <Label id="chess_lineup_star_8_10" class="lineup_star10 invisible" style="horizontal-align:left;vertical-align:top;font-size:10px;text-align:center;"/>
+                        </Panel>
+                    </Panel>
+                    <Panel id = "end_buff_8" class = "race_col36">
+                        
+                    </Panel>
+                    <Panel class = "race_col15">
+                        <Label id = "end_money_8" text = ""></Label>
+                    </Panel>
+                    <Panel class = "race_col5"><Label id = "end_win_8" text = ""></Label></Panel>
+                    <Panel class = "race_col16"><Label id = "end_damage_8" text = ""></Label></Panel>
+                    <Panel class = "race_col9"><Label id = "end_duration_8" text = ""></Label></Panel>
+                    <Panel class = "race_col3" id = "panel_end_board_award_8">
+                        <Image id = "img_end_board_candy_8" src="s2r://panorama/images/custom_game/candy_png.vtex" class="img_end_board_award_candy invisible"/>
+                        <Label id = "text_end_board_award_8" text = "× 5" class="text_end_board_award_candy invisible"/>
+                    </Panel>
+                    <Panel id= "panel_end_report_8" class = "race_col9 invisible" onmouseover="DOTAShowTextTooltip('#txt_report')" onmouseout="DOTAHideTextTooltip()" onactivate="report(8)">
+                        <Image id= "img_end_report_8" src="s2r://panorama/images/custom_game/report_white_png.vtex" class="img_end_flag"/>
+                    </Panel>
+                </Panel>
+            </Panel>
+            
+            <Panel id = "button_endgame" onactivate = "Game.FinishGame();" class = "dota_button">
+                <Label text="END GAME"/>
+            </Panel>
+        </Panel>
+        <Panel id = "endgame_curtain">
+        </Panel>
+    </Panel>
+
+
+</root>
