@@ -2184,7 +2184,7 @@ function InitHeros()
 	end
 	--从服务器获取玩家信息
 	prt('PLAYER_COUNT:'..PlayerResource:GetPlayerCount())
-	prt('v0007')
+	prt('v0008')
 	-- prt(GameRules:GetGameModeEntity().steamidlist_heroindex)
 	local url = "https://autochess.ppbizon.com/game/new/@"..GameRules:GetGameModeEntity().steamidlist_heroindex.."?hehe="..RandomInt(1,10000)..GetSendKey()
 	SendHTTP(url.."&from=InitHeros", function(t)
@@ -5981,6 +5981,9 @@ function LoseARound(team,enemychess_new)
 				damage_all = damage_all + math.floor(GetHitDamage(u) or 1)
 				if (damage_all > GameRules:GetGameModeEntity().battle_round / 2) then
 					damage_all = GameRules:GetGameModeEntity().battle_round / 2
+				end
+				if (damage_all > 10) then
+					damage_all = 10
 				end
 			else
 				--宙斯，要雷劈的
