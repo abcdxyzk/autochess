@@ -880,7 +880,7 @@ function DACTableChanged(table,key,data){
             var local_id = Game.GetPlayerInfo(Players.GetLocalPlayer()).player_steamid;
             if (i == local_id){
                 if (!data.info[i].match){
-                    show_panel_guide();
+                    //show_panel_guide();
                 }
             }
             
