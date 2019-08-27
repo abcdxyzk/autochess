@@ -2190,7 +2190,7 @@ function InitHeros()
 	end
 	--从服务器获取玩家信息
 	prt('PLAYER_COUNT:'..PlayerResource:GetPlayerCount())
-	prt('v0015')
+	prt('v0024')
 	-- prt(GameRules:GetGameModeEntity().steamidlist_heroindex)
 	local url = "https://autochess.ppbizon.com/game/new/@"..GameRules:GetGameModeEntity().steamidlist_heroindex.."?hehe="..RandomInt(1,10000)..GetSendKey()
 	SendHTTP(url.."&from=InitHeros", function(t)
@@ -6883,21 +6883,31 @@ function LoadCloudEnemy(wave,team)
 
 		if chesses ~= nil then
 			for i,vi in pairs(chesses.lineup) do
-				GameRules:GetGameModeEntity().unit[team][(9-vi.y)..'_'..(9-vi.x)] = 1
-				local x = CreateUnitByName(vi.chess,XY2Vector((9-vi.x),(9-vi.y),team),true,nil,nil,DOTA_TEAM_NEUTRALS)
-				x:SetForwardVector(Vector(0,-1,0))
-				x.y_x = (9-vi.y)..'_'..(9-vi.x)
-				x.y = (9-vi.y)
-				x.x = (9-vi.x)
-				x.team_id = 4
-				x.at_team_id = team
-				AddAbilityAndSetLevel(x,'root_self')
-				AddAbilityAndSetLevel(x,'jiaoxie_wudi')
-				table.insert(GameRules:GetGameModeEntity().to_be_destory_list[team],x)
-				--复制物品
-				if vi.lastitem ~= nil then
-					for _,it in pairs(vi.lastitem) do
-						x:AddItemByName(it)
+				--去掉等级变量
+				local find_name = vi.chess
+				if string.find(find_name,'11') ~= nil then
+					find_name = string.sub(find_name,1,-3)
+				end
+				if string.find(find_name,'1') ~= nil then
+					find_name = string.sub(find_name,1,-2)
+				end
+				if GameRules:GetGameModeEntity().chess_2_mana[find_name] ~= nil then
+					GameRules:GetGameModeEntity().unit[team][(9-vi.y)..'_'..(9-vi.x)] = 1
+					local x = CreateUnitByName(vi.chess,XY2Vector((9-vi.x),(9-vi.y),team),true,nil,nil,DOTA_TEAM_NEUTRALS)
+					x:SetForwardVector(Vector(0,-1,0))
+					x.y_x = (9-vi.y)..'_'..(9-vi.x)
+					x.y = (9-vi.y)
+					x.x = (9-vi.x)
+					x.team_id = 4
+					x.at_team_id = team
+					AddAbilityAndSetLevel(x,'root_self')
+					AddAbilityAndSetLevel(x,'jiaoxie_wudi')
+					table.insert(GameRules:GetGameModeEntity().to_be_destory_list[team],x)
+					--复制物品
+					if vi.lastitem ~= nil then
+						for _,it in pairs(vi.lastitem) do
+							x:AddItemByName(it)
+						end
 					end
 				end
 			end
